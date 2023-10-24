@@ -1,4 +1,14 @@
+using ApiPeliculas.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+//configurar la cadana de conexion
+builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
+{
+    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"));
+});
 
 // Add services to the container.
 
