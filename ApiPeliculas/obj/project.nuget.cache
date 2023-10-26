@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cj9KUMVGYAQud+7TketGZTneupok+l6OFK2qL+JIxDG6kGmSvwIkPsdh5SKO2Q3bbJqU8k3Uj0oNbcSw4mbp+Q==",
+  "dgSpecHash": "G/yDyBAnSykDKcakMyCXWJhT17GvavA2ZYT9mFqlhlowCSXzxcuC4/CjRTlHCSNV3fyH7FqA0rvuHb4ImBwcCg==",
   "success": true,
   "projectFilePath": "D:\\repo\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\geja0\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\geja0\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

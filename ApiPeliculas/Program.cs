@@ -1,5 +1,8 @@
 using ApiPeliculas.Data;
+using ApiPeliculas.Repositorio;
+using ApiPeliculas.Repositorio.IRepositorio;
 using Microsoft.EntityFrameworkCore;
+using ApiPeliculas.PeliculasMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"));
 });
+
+//Agregar los repositorios
+builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+
+
+//agregar el automapper
+builder.Services.AddAutoMapper(typeof(PeliculasMapper));
 
 // Add services to the container.
 
