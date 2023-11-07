@@ -89,5 +89,53 @@ namespace ApiPeliculas.Controllers
 
             return CreatedAtRoute("GetPelicula", new { peliculaId = pelicula.Id }, pelicula);
         }
+
+        [HttpPatch("{peliculaId:int}", Name = "ActualizarPatchPelicula")]  // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
+        [ProducesResponseType(204)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ActualizarPatchPelicula(int peliculaId, [FromBody] PeliculaDto peliculaDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var pelicula = _mapper.Map<Pelicula>(peliculaDto);
+
+            if (!_pelRepo.ActualizarPelicula(pelicula))
+            {
+                ModelState.AddModelError("", $"Ocurrio un error al actualizar el registro {pelicula.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{peliculaId:int}", Name = "EliminarPelicula")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public IActionResult EliminarPelicula(int peliculaId)
+        {
+
+            if (!_pelRepo.ExistePelicula(peliculaId))
+                return NotFound(ModelState);
+
+            var pelicula = _pelRepo.GetPelicula(peliculaId);
+
+
+
+            if (!_pelRepo.BorrarPelicula(pelicula))
+            {
+                ModelState.AddModelError("", $"Ocurrio un error al borrar el registro {pelicula.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
+
     }
 }

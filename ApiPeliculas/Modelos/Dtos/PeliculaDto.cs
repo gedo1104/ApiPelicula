@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static ApiPeliculas.Modelos.Dtos.CrearPeliculaDto;
 
 namespace ApiPeliculas.Modelos.Dtos
 {
@@ -18,7 +19,7 @@ namespace ApiPeliculas.Modelos.Dtos
         [Required(ErrorMessage = "La duracion es requerido")]
         public int Duracion { get; set; }
 
-        public enum TipoClasificacion { Siente, Trece, Diecisies, dieciocho }
+        //public enum TipoClasificacion { Siente, Trece, Diecisies, dieciocho }
 
         public TipoClasificacion Clasificaion { get; set; }
 
