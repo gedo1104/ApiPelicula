@@ -3,6 +3,7 @@ using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPeliculas.Controllers
@@ -135,6 +136,47 @@ namespace ApiPeliculas.Controllers
             }
 
             return NoContent();
+        }
+
+        [HttpGet("GetPeliculasCategoria/{categoriaId:int}")]
+        public IActionResult GetPeliculasEnCategoria(int categoriaId)
+        {
+            var listaPelicula = _pelRepo.GetPeliculasEnCategoria(categoriaId);
+
+
+            if (listaPelicula  == null)
+                return NotFound();
+
+            var itemPelicula = new List<PeliculaDto>();
+
+            foreach (var item in listaPelicula)
+            {
+                itemPelicula.Add(_mapper.Map<PeliculaDto>(item));
+            }
+
+            return Ok(itemPelicula);
+
+        }
+
+        [HttpGet("Buscar")]
+        public IActionResult buscar(string nombre)
+        {
+            try 
+            {
+                var resultado = _pelRepo.BuscarPeliculas(nombre.Trim());
+
+                if (resultado.Any())
+                {
+                    return Ok(resultado);
+                }
+
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error en el servicio");
+            }
+
         }
 
     }
