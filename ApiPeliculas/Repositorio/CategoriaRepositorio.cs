@@ -9,7 +9,7 @@ namespace ApiPeliculas.Repositorio
         private readonly ApplicationDbContext _db; //instancio 
 
         
-            public CategoriaRepositorio(ApplicationDbContext db)
+        public CategoriaRepositorio(ApplicationDbContext db)
         {
             _db = db;
         }

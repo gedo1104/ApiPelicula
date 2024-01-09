@@ -15,6 +15,9 @@ namespace ApiPeliculas.Data
 
         public DbSet<Pelicula> Pelicula { get; set; }
 
+        public DbSet<Usuario> Usuario { get; set; }
+
+
 
     }
 }
