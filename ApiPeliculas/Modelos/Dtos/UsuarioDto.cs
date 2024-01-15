@@ -1,4 +1,6 @@
-﻿namespace ApiPeliculas.Modelos.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ApiPeliculas.Modelos.Dtos
 {
     public class UsuarioDto
     {
