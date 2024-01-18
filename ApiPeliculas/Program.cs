@@ -28,6 +28,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//config cords
+//se pueden habilitar 1 dominio como n dominios separados por coma
+//si usamos el * es para todos los dominios o podemos usar uno por defecto http://localhost:443
+
+builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+{
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader(); 
+}));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,6 +47,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//uso de cors
+app.UseCors("PolicyCors");
 
 app.UseAuthorization();
 

@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using XSystem.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ApiPeliculas.Repositorio
 {
@@ -127,6 +128,21 @@ namespace ApiPeliculas.Repositorio
             return resp;
         }
 
+        public bool BorrarUsuario(Usuario usuario)
+        {
+            _db.Usuario.Remove(usuario);
+            return Guardar();
+        }
 
+        public bool Guardar()
+        {
+            return _db.SaveChanges() >= 0 ? true : false;
+        }
+
+        public bool ExisteUsuario(int id)
+        {
+            bool valor = _db.Usuario.Any(c => c.Id == id);
+            return valor;
+        }
     }
 }

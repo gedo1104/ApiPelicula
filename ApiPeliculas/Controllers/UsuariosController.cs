@@ -75,7 +75,7 @@ namespace ApiPeliculas.Controllers
                 _respuestaApi.StatusCode = HttpStatusCode.BadRequest;
                 _respuestaApi.isSuccess = false;
                 _respuestaApi.ErrorMessages.Add("el nombre de usuario ya existe");
-                return BadRequest();
+                return BadRequest(_respuestaApi);
             }
 
             var usuario = await _usRepo.Registro(usuarioRegistroDto);
@@ -84,13 +84,64 @@ namespace ApiPeliculas.Controllers
                 _respuestaApi.StatusCode = HttpStatusCode.BadRequest;
                 _respuestaApi.isSuccess = false;
                 _respuestaApi.ErrorMessages.Add("Error al registrar el usuario");
-                return BadRequest();
+                return BadRequest(_respuestaApi);
             }
 
             _respuestaApi.StatusCode = HttpStatusCode.OK;
             _respuestaApi.isSuccess = true;
 
             return Ok(_respuestaApi);
+        }
+
+        [HttpPost("login")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public async Task<IActionResult> Login([FromBody] UsuarioLoginDto usuarioLoginDto)
+        {
+            var respuestaLogin = await  _usRepo.Login(usuarioLoginDto);
+
+
+            if (respuestaLogin.Usuario == null || string.IsNullOrEmpty(respuestaLogin.Token))
+            {
+                _respuestaApi.StatusCode = HttpStatusCode.BadRequest;
+                _respuestaApi.isSuccess = false;
+                _respuestaApi.ErrorMessages.Add("El nombre de usuario o password son incorrectos");
+                return BadRequest(_respuestaApi);
+            }
+
+            _respuestaApi.StatusCode = HttpStatusCode.OK;
+            _respuestaApi.isSuccess = true;
+            _respuestaApi.Result = respuestaLogin;
+            return Ok(_respuestaApi);
+        }
+
+        // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
+        [HttpDelete("{usuarioId:int}", Name = "EliminarUsuario")]  
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public IActionResult Eliminarusuario(int usuarioId)
+        {
+           // bool validarNombreUsuarioUnico = _usRepo.IsUniqueUser(usuarioRegistroDto.NombreUSuario);
+                bool validarExisteUsuario = _usRepo.ExisteUsuario(usuarioId);
+            if (!validarExisteUsuario)
+                return NotFound(ModelState);
+
+            //var categoria = _ctRepo.GetCategoria(categoriaId);
+            var usuario = _usRepo.GetUsuario(usuarioId);
+
+
+            if (!_usRepo.BorrarUsuario(usuario))
+            {
+                ModelState.AddModelError("", $"Ocurrio un error al borrar el registro {usuario.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
         }
 
 
