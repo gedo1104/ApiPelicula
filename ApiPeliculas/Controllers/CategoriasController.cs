@@ -2,6 +2,7 @@
 using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPeliculas.Controllers
@@ -21,7 +22,7 @@ namespace ApiPeliculas.Controllers
             _ctRepo = ctRepo;
             _mapper = mapper;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -39,7 +40,7 @@ namespace ApiPeliculas.Controllers
 
             return Ok(listaCategoriasDto);
         }
-
+        [AllowAnonymous]
         [HttpGet("{categoriaId:Int}", Name= "GetCategoria")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -58,11 +59,12 @@ namespace ApiPeliculas.Controllers
             return Ok(itemCategoriaDto);
         }
 
-
+        [Authorize(Roles ="admin")]
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(CategoriaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
         public IActionResult CrearCategoria([FromBody] CrearCategoriaDto crearCategoriaDto)
@@ -91,11 +93,13 @@ namespace ApiPeliculas.Controllers
             return CreatedAtRoute("GetCategoria", new {categoriaId = categoria.Id }, categoria);
         }
 
-
+        [Authorize(Roles = "admin")]
         [HttpPatch("{categoriaId:int}", Name = "ActualizarCategoria")]  // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
         [ProducesResponseType(201, Type = typeof(CategoriaDto))]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
         public IActionResult ActualizarCategoria(int categoriaId,[FromBody] CategoriaDto categoriaDto)
         {
             if (!ModelState.IsValid)
@@ -116,11 +120,13 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{categoriaId:int}", Name = "EliminarCategoria")]  // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
         public IActionResult EliminarCategoria(int categoriaId)
         {

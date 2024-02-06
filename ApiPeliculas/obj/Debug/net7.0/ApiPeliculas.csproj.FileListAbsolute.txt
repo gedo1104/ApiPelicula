@@ -78,3 +78,4 @@ D:\repo\ApiPeliculas\ApiPeliculas\bin\Debug\net7.0\AutoMapper.dll
 D:\repo\ApiPeliculas\ApiPeliculas\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\repo\ApiPeliculas\ApiPeliculas\bin\Debug\net7.0\Microsoft.Practices.ServiceLocation.dll
 D:\repo\ApiPeliculas\ApiPeliculas\bin\Debug\net7.0\XAct.Core.PCL.dll
+D:\repo\ApiPeliculas\ApiPeliculas\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

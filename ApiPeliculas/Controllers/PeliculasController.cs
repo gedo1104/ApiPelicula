@@ -2,9 +2,11 @@
 using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace ApiPeliculas.Controllers
 {
@@ -21,7 +23,7 @@ namespace ApiPeliculas.Controllers
             _pelRepo = pelRepo;
             _mapper = mapper;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -39,7 +41,8 @@ namespace ApiPeliculas.Controllers
 
             return Ok(listaPeliculasDto);
         }
-
+        
+        [AllowAnonymous]
         [HttpGet("{peliculaId:Int}", Name = "GetPelicula")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -57,11 +60,12 @@ namespace ApiPeliculas.Controllers
 
             return Ok(itemPeliculaDto);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(PeliculaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
@@ -91,10 +95,12 @@ namespace ApiPeliculas.Controllers
             return CreatedAtRoute("GetPelicula", new { peliculaId = pelicula.Id }, pelicula);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPatch("{peliculaId:int}", Name = "ActualizarPatchPelicula")]  // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
         [ProducesResponseType(204)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult ActualizarPatchPelicula(int peliculaId, [FromBody] PeliculaDto peliculaDto)
         {
             if (!ModelState.IsValid)
@@ -113,11 +119,13 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{peliculaId:int}", Name = "EliminarPelicula")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
         public IActionResult EliminarPelicula(int peliculaId)
         {
@@ -138,6 +146,7 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+        [AllowAnonymous]
         [HttpGet("GetPeliculasCategoria/{categoriaId:int}")]
         public IActionResult GetPeliculasEnCategoria(int categoriaId)
         {
@@ -158,6 +167,7 @@ namespace ApiPeliculas.Controllers
 
         }
 
+        [AllowAnonymous]
         [HttpGet("Buscar")]
         public IActionResult buscar(string nombre)
         {

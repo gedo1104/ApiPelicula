@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K/LF5HRS/In5fQyRT6HsLTGXTI2eN35QYcU+GYjRhGvWxYV+aVpaeCE4XsVFCxx9WO5wSdX7y6jKYMtCAW4U9Q==",
+  "dgSpecHash": "afumZvBCDjamQ9E96POl/eFBn2rxog93IW6y6RDFcQzR46BPVGsmsbAUUnHETBHljlxFWSppOPla2taV11F7Aw==",
   "success": true,
   "projectFilePath": "D:\\repo\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\geja0\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\commonservicelocator\\1.3.0\\commonservicelocator.1.3.0.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\geja0\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.0\\microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.12\\microsoft.aspnetcore.openapi.7.0.12.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\geja0\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

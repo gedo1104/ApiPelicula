@@ -2,6 +2,7 @@
 using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -24,9 +25,11 @@ namespace ApiPeliculas.Controllers
             
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
         public IActionResult GetUsuarios()
         {
@@ -42,12 +45,13 @@ namespace ApiPeliculas.Controllers
             return Ok(listaUsuarioDto);
         }
 
-
+        [Authorize(Roles = "admin")]
         [HttpGet("{usuarioId:Int}", Name = "GetUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
         public IActionResult GetUsuario(int usuarioId)
         {
@@ -61,6 +65,7 @@ namespace ApiPeliculas.Controllers
             return Ok(itemUsuarioDto);
         }
 
+        [AllowAnonymous]
         [HttpPost("registro")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -93,6 +98,7 @@ namespace ApiPeliculas.Controllers
             return Ok(_respuestaApi);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -118,11 +124,13 @@ namespace ApiPeliculas.Controllers
         }
 
         // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
+        [Authorize(Roles = "admin")]
         [HttpDelete("{usuarioId:int}", Name = "EliminarUsuario")]  
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
         public IActionResult Eliminarusuario(int usuarioId)
         {
