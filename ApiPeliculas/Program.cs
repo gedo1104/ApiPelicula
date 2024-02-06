@@ -6,6 +6,8 @@ using ApiPeliculas.PeliculasMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"));
 });
+
+//cache
+builder.Services.AddResponseCaching();
 
 //Agregar los repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
@@ -48,11 +53,45 @@ builder.Services.AddAuthentication(
             });
 
 // Add services to the container.
+//y agregar cache global
+builder.Services.AddControllers(options =>
+{
+    //cache global
+    options.CacheProfiles.Add("Default20seconds", new CacheProfile() { Duration=20});
+});
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = 
+        "Autentificacion JWT con el esquema bearer. \r\n\r\n" +
+        "Ingresa la palabra 'Bearer' seguida de un [espacio] y despues su token en campo de abajo \r\n\r\n " +
+        "Ejemplo: \"Bearer sfsdfsdf\"", 
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header
+            },
+            new List<string>()
+        }
+    });
+});
 
 //config cords
 //se pueden habilitar 1 dominio como n dominios separados por coma
