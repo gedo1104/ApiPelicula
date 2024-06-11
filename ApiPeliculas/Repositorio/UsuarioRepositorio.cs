@@ -1,8 +1,10 @@
-﻿using ApiPeliculas.Data;
+﻿
+using ApiPeliculas.Data;
 using ApiPeliculas.Modelos;
 using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -22,14 +24,15 @@ namespace ApiPeliculas.Repositorio
             claveSecreta = config.GetValue<string>("ApiSettings:token");
 
         }
-        public Usuario GetUsuario(int usuarioId)
+        public AppUsuario GetUsuario(string usuarioId)
         {
-            return _db.Usuario.FirstOrDefault(u => u.Id == usuarioId);
+
+            return _db.AppUsuario.FirstOrDefault(u => u.Id == usuarioId);
         }
 
-        public ICollection<Usuario> GetUsuarios()
+        public ICollection<AppUsuario> GetUsuarios()
         {
-            return _db.Usuario.OrderBy(u => u.NombreUsuario).ToList(); 
+            return _db.AppUsuario.OrderBy(u => u.UserName).ToList(); 
         }
 
         public bool IsUniqueUser(string usuario)
