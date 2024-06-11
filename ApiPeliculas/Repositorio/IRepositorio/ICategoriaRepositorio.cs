@@ -1,4 +1,5 @@
-﻿using ApiPeliculas.Modelos;
+﻿//spell: disable
+using ApiPeliculas.Modelos;
 
 namespace ApiPeliculas.Repositorio.IRepositorio
 {

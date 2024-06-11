@@ -1,4 +1,5 @@
-﻿using ApiPeliculas.Data;
+﻿//spell: disable
+using ApiPeliculas.Data;
 using ApiPeliculas.Modelos;
 using ApiPeliculas.Repositorio.IRepositorio;
 

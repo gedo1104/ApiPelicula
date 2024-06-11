@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"));
 });
+
+//soporte para autentificacion conn .net identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 //cache
 builder.Services.AddResponseCaching();
