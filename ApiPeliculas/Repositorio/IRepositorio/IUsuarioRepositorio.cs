@@ -9,10 +9,10 @@ namespace ApiPeliculas.Repositorio.IRepositorio
         AppUsuario GetUsuario(string usuarioId);
         bool IsUniqueUser(string usuario);
         Task<UsuarioLoginRespuestaDto> Login(UsuarioLoginDto usuarioLoginDto);
-        Task<Usuario> Registro(UsuarioRegistroDto usuarioRegistroDto);
+        Task<UsuarioDatosDto> Registro(UsuarioRegistroDto usuarioRegistroDto);
 
-        bool BorrarUsuario(Usuario usuario);
-        bool ExisteUsuario(int id);
+        bool BorrarUsuario(AppUsuario usuario);
+        bool ExisteUsuario(string id);
     }
 
 }
