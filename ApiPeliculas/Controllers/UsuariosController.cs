@@ -46,7 +46,7 @@ namespace ApiPeliculas.Controllers
         }
 
         [Authorize(Roles = "admin")]
-        [HttpGet("{usuarioId:Int}", Name = "GetUsuario")]
+        [HttpGet("{usuarioId}", Name = "GetUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -132,7 +132,7 @@ namespace ApiPeliculas.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
-        public IActionResult Eliminarusuario(int usuarioId)
+        public IActionResult Eliminarusuario(string usuarioId)
         {
            // bool validarNombreUsuarioUnico = _usRepo.IsUniqueUser(usuarioRegistroDto.NombreUSuario);
                 bool validarExisteUsuario = _usRepo.ExisteUsuario(usuarioId);

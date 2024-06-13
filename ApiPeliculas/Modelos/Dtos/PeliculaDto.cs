@@ -11,7 +11,7 @@ namespace ApiPeliculas.Modelos.Dtos
         [Required(ErrorMessage = "El nombre es requerido")]
         public string Nombre { get; set; }
 
-        public string RutaImagen { get; set; }
+        public byte[] RutaImagen { get; set; }
 
         [Required(ErrorMessage = "La descripcion es requerido")]
         public string Descripcion { get; set; }

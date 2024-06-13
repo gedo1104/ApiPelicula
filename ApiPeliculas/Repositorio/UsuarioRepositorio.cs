@@ -81,8 +81,11 @@ namespace ApiPeliculas.Repositorio
                     await _rolManager.CreateAsync(new IdentityRole("registrado"));
 
                 }
+                //usuario administrador  admin@admin.com Admin123*
 
-                await _userManager.AddToRoleAsync(usuario, "admin");
+                //await _userManager.AddToRoleAsync(usuario, "admin");
+                await _userManager.AddToRoleAsync(usuario, "registrado");
+
                 var usuarioReturn = _db.AppUsuario.FirstOrDefault(u => u.UserName == usuarioRegistroDto.NombreUSuario);
 
                 //opcion 1

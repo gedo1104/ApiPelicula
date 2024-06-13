@@ -108,7 +108,7 @@ namespace ApiPeliculas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categoria");
+                    b.ToTable("Categoria", (string)null);
                 });
 
             modelBuilder.Entity("ApiPeliculas.Modelos.Pelicula", b =>
@@ -147,7 +147,7 @@ namespace ApiPeliculas.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("Pelicula");
+                    b.ToTable("Pelicula", (string)null);
                 });
 
             modelBuilder.Entity("ApiPeliculas.Modelos.Usuario", b =>
@@ -176,7 +176,7 @@ namespace ApiPeliculas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuario");
+                    b.ToTable("Usuario", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
