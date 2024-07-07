@@ -22,7 +22,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5013" />
   </ItemGroup>
 
 </Project>
