@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Api/Categorias": {
+    "/Api/v1/Categorias": {
       "get": {
         "tags": [
           "Categorias"
@@ -109,7 +109,7 @@
         }
       }
     },
-    "/Api/Categorias/{categoriaId}": {
+    "/Api/v1/Categorias/{categoriaId}": {
       "get": {
         "tags": [
           "Categorias"
@@ -399,7 +399,7 @@
         }
       }
     },
-    "/api/peliculas": {
+    "/api/v1/peliculas": {
       "get": {
         "tags": [
           "Peliculas"
@@ -523,7 +523,7 @@
         }
       }
     },
-    "/api/peliculas/{peliculaId}": {
+    "/api/v1/peliculas/{peliculaId}": {
       "get": {
         "tags": [
           "Peliculas"
@@ -813,7 +813,7 @@
         }
       }
     },
-    "/api/peliculas/GetPeliculasCategoria/{categoriaId}": {
+    "/api/v1/peliculas/GetPeliculasCategoria/{categoriaId}": {
       "get": {
         "tags": [
           "Peliculas"
@@ -837,7 +837,7 @@
         }
       }
     },
-    "/api/peliculas/Buscar": {
+    "/api/v1/peliculas/Buscar": {
       "get": {
         "tags": [
           "Peliculas"
@@ -859,7 +859,7 @@
         }
       }
     },
-    "/api/usuarios": {
+    "/api/v1/usuarios": {
       "get": {
         "tags": [
           "Usuarios"
@@ -911,7 +911,7 @@
         }
       }
     },
-    "/api/usuarios/{usuarioId}": {
+    "/api/v1/usuarios/{usuarioId}": {
       "get": {
         "tags": [
           "Usuarios"
@@ -1117,7 +1117,7 @@
         }
       }
     },
-    "/api/usuarios/registro": {
+    "/api/v1/usuarios/registro": {
       "post": {
         "tags": [
           "Usuarios"
@@ -1171,7 +1171,7 @@
         }
       }
     },
-    "/api/usuarios/login": {
+    "/api/v1/usuarios/login": {
       "post": {
         "tags": [
           "Usuarios"

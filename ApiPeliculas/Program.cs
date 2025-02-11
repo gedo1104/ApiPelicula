@@ -30,10 +30,20 @@ var apiVersioningBuilder = builder.Services.AddApiVersioning( opcion =>
     opcion.AssumeDefaultVersionWhenUnspecified = true;
     opcion.DefaultApiVersion = new ApiVersion(1, 0);
     opcion.ReportApiVersions = true;
-    opcion.ApiVersionReader = ApiVersionReader.Combine(
-        new QueryStringApiVersionReader("api-verison")
-    );
+    //opcion.ApiVersionReader = ApiVersionReader.Combine(
+    //    new QueryStringApiVersionReader("api-verison") //?api-version=1.0
+        
+    //);
 });
+
+apiVersioningBuilder.AddApiExplorer(
+        opciones =>
+        {
+            opciones.GroupNameFormat = "'v'VVV";
+            opciones.SubstituteApiVersionInUrl = true;
+            
+        }
+    );
 
 //Agregar los repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();

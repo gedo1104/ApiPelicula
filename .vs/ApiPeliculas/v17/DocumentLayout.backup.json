@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\repositorios\\ApiPelicula\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\repositorio\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\repositorio\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +13,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\repositorio\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\repositorio\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F35881-920B-4F69-912A-95A94B501D6E}|ApiPeliculas\\ApiPeliculas.csproj|d:\\repositorios\\apipelicula\\apipeliculas\\modelos\\pelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UsuarioRepositorio.cs",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Repositorio\\UsuarioRepositorio.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Repositorio\\UsuarioRepositorio.cs",
@@ -63,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\appsettings.json",
               "RelativeDocumentMoniker": "ApiPeliculas\\appsettings.json",
@@ -71,44 +71,43 @@
               "RelativeToolTip": "ApiPeliculas\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-12T15:48:14.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T15:48:14.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\CategoriasController.cs",
               "ToolTip": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\CategoriasController.cs",
               "RelativeToolTip": "ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-13T20:51:57.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PeliculasController.cs",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\PeliculasController.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\PeliculasController.cs",
               "ToolTip": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\PeliculasController.cs",
               "RelativeToolTip": "ApiPeliculas\\Controllers\\PeliculasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-13T20:49:45.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\UsuariosController.cs",
               "ToolTip": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "ApiPeliculas\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAIAwwFUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-13T20:49:07.33Z",
               "EditorCaption": ""
@@ -123,8 +122,7 @@
               "RelativeToolTip": "ApiPeliculas\\Modelos\\Dtos\\PeliculaDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:42:16.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T16:42:16.859Z"
             },
             {
               "$type": "Document",
@@ -136,18 +134,17 @@
               "RelativeToolTip": "ApiPeliculas\\Modelos\\Pelicula.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:42:16.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T16:42:16.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Program.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Program.cs",
               "ToolTip": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\Program.cs",
               "RelativeToolTip": "ApiPeliculas\\Program.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAADAAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T16:42:16.891Z",
               "EditorCaption": ""

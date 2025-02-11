@@ -1,6 +1,7 @@
 ﻿using ApiPeliculas.Modelos;
 using ApiPeliculas.Modelos.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
+using Asp.Versioning;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,9 @@ namespace ApiPeliculas.Controllers
 {
     [ApiController]
     //[Route("Api/[controller]")]  forma predeterminada
-    [Route("Api/Categorias")]
+    [Route("Api/v{version:ApiVersion}/Categorias")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
 
     public class CategoriasController : ControllerBase
     {
@@ -24,6 +27,7 @@ namespace ApiPeliculas.Controllers
         }
         [AllowAnonymous]
         [HttpGet]
+        [MapToApiVersion("1.0")]
         //[ResponseCache(Duration =20)]
         // [ResponseCache(Location =ResponseCacheLocation.None, NoStore =true)] //no queremos cachear ni guardar los errores en cache
         //[HttpGet("Buscar")]
@@ -44,6 +48,8 @@ namespace ApiPeliculas.Controllers
 
             return Ok(listaCategoriasDto);
         }
+
+
         [AllowAnonymous]
         [HttpGet("{categoriaId:Int}", Name= "GetCategoria")]
         //[ResponseCache(Duration = 30)]
