@@ -26,6 +26,7 @@ namespace ApiPeliculas.Controllers
         [HttpGet]
         //[ResponseCache(Duration =20)]
         // [ResponseCache(Location =ResponseCacheLocation.None, NoStore =true)] //no queremos cachear ni guardar los errores en cache
+        //[HttpGet("Buscar")]
         [ResponseCache(CacheProfileName = "Default20seconds")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]

@@ -120,6 +120,7 @@ namespace ApiPeliculas.Controllers
         }
 
         [Authorize(Roles = "admin")]
+        [Authorize(Roles = "registrado")]
         [HttpDelete("{peliculaId:int}", Name = "EliminarPelicula")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]

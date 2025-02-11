@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using ApiPeliculas.Modelos;
+using Asp.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 builder.Services.AddIdentity<AppUsuario, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 //cache
-builder.Services.AddResponseCaching();
+var apiVersioningBuilder = builder.Services.AddApiVersioning( opcion =>
+{
+    opcion.AssumeDefaultVersionWhenUnspecified = true;
+    opcion.DefaultApiVersion = new ApiVersion(1, 0);
+    opcion.ReportApiVersions = true;
+    opcion.ApiVersionReader = ApiVersionReader.Combine(
+        new QueryStringApiVersionReader("api-verison")
+    );
+});
 
 //Agregar los repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
@@ -36,6 +45,11 @@ builder.Services.AddAutoMapper(typeof(PeliculasMapper));
 
 //configuracion autentificacion
 var key = builder.Configuration.GetValue<string>("ApiSettings:token");
+
+//soporte para versionamiento
+builder.Services.AddApiVersioning();
+
+
 builder.Services.AddAuthentication(
         x =>
         {

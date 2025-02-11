@@ -173,3 +173,11 @@ D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\refint\ApiPeliculas.dl
 D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\ApiPeliculas.pdb
 D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\ApiPeliculas.genruntimeconfig.cache
 D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\ref\ApiPeliculas.dll
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\ApiPeliculas.staticwebassets.endpoints.json
+D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\staticwebassets\msbuild.ApiPeliculas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\repositorios\ApiPelicula\ApiPeliculas\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Abstractions.dll
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Http.dll
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll

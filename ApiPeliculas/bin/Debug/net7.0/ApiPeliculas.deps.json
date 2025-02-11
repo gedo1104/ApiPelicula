@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "ApiPeliculas/1.0.0": {
         "dependencies": {
+          "Asp.Versioning.Mvc": "7.0.0",
+          "Asp.Versioning.Mvc.ApiExplorer": "7.0.0",
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.0",
@@ -16,10 +18,54 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.12",
           "Swashbuckle.AspNetCore": "6.5.0",
-          "XAct.Core.PCL": "0.0.5013"
+          "XAct.Core.PCL": "0.0.5014"
         },
         "runtime": {
           "ApiPeliculas.dll": {}
+        }
+      },
+      "Asp.Versioning.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Asp.Versioning.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.8377.36721"
+          }
+        }
+      },
+      "Asp.Versioning.Http/7.0.0": {
+        "dependencies": {
+          "Asp.Versioning.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Asp.Versioning.Http.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.8377.36721"
+          }
+        }
+      },
+      "Asp.Versioning.Mvc/7.0.0": {
+        "dependencies": {
+          "Asp.Versioning.Http": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Asp.Versioning.Mvc.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.8377.36721"
+          }
+        }
+      },
+      "Asp.Versioning.Mvc.ApiExplorer/7.0.0": {
+        "dependencies": {
+          "Asp.Versioning.Mvc": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Asp.Versioning.Mvc.ApiExplorer.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.8377.36726"
+          }
         }
       },
       "AutoMapper/12.0.1": {
@@ -722,14 +768,14 @@
           }
         }
       },
-      "XAct.Core.PCL/0.0.5013": {
+      "XAct.Core.PCL/0.0.5014": {
         "dependencies": {
           "CommonServiceLocator": "1.3.0"
         },
         "runtime": {
           "lib/portable-win+net45+sl50+wp80/XAct.Core.PCL.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "0.0.5013.0"
+            "fileVersion": "0.0.5014.0"
           }
         }
       }
@@ -740,6 +786,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Asp.Versioning.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yujGpbGBCViHvYiBJD0S5XFgOI+f5bGvi8tnfMJV6EC0b8SAqBn1YC+yCnJjQo3D2XP9TmSuKIJ7ofVy58GcuQ==",
+      "path": "asp.versioning.abstractions/7.0.0",
+      "hashPath": "asp.versioning.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Http/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FG5grz29CYBT06xDWoM1hf+pfB7sPDYXuOOIYtVNIHduUQeWsxMfCITcDrMmZNXAf0TfcYRwCizJfOIJzWmaXA==",
+      "path": "asp.versioning.http/7.0.0",
+      "hashPath": "asp.versioning.http.7.0.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Mvc/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wcaXjeBLbDcSXLXtEJrVPXd8amRuINd/7SNYwMRrwwzQi6QMeJXqFZrFM+Bs4Tmd1C5pXBT51wedFG+zbN7Mzw==",
+      "path": "asp.versioning.mvc/7.0.0",
+      "hashPath": "asp.versioning.mvc.7.0.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Mvc.ApiExplorer/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eN3Htqa+CWtzTGuOQZsoMJtcTf85ng+5Fg1NJjrCcGfgTB2BA946b3F7eUuo0sPFAQNcKP1cO5VxcO9WiqbmCA==",
+      "path": "asp.versioning.mvc.apiexplorer/7.0.0",
+      "hashPath": "asp.versioning.mvc.apiexplorer.7.0.0.nupkg.sha512"
     },
     "AutoMapper/12.0.1": {
       "type": "package",
@@ -1273,12 +1347,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "XAct.Core.PCL/0.0.5013": {
+    "XAct.Core.PCL/0.0.5014": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cKoNoU6PjjY1Kn8tvzyQeVp1fz3gy7Tkk/9vnP3oXX/fMFUah750Ng2g3p44ORBOnriPfpvYMhQYzYr2av0f9A==",
-      "path": "xact.core.pcl/0.0.5013",
-      "hashPath": "xact.core.pcl.0.0.5013.nupkg.sha512"
+      "sha512": "sha512-r0rX5Dzr0mfUp8FtVnxXlv5w+cXhz6tHfQ79lf6naLB92J+h2wkGw0q6CfOa2FiveN2ahSflf6LB2G1cOx43AQ==",
+      "path": "xact.core.pcl/0.0.5014",
+      "hashPath": "xact.core.pcl.0.0.5014.nupkg.sha512"
     }
   }
 }
