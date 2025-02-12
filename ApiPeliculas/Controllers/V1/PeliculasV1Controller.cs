@@ -9,18 +9,18 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.V1
 {
     [Route("api/v{version:ApiVersion}/peliculas")]
     [ApiController]
     [ApiVersion("1.0")]
-    public class PeliculasController : ControllerBase
+    public class PeliculasV1Controller : ControllerBase
     {
         private readonly IPeliculaRepositorio _pelRepo;
 
         private readonly IMapper _mapper;
 
-        public PeliculasController(IPeliculaRepositorio pelRepo, IMapper mapper)
+        public PeliculasV1Controller(IPeliculaRepositorio pelRepo, IMapper mapper)
         {
             _pelRepo = pelRepo;
             _mapper = mapper;
@@ -43,7 +43,7 @@ namespace ApiPeliculas.Controllers
 
             return Ok(listaPeliculasDto);
         }
-        
+
         [AllowAnonymous]
         [HttpGet("{peliculaId:Int}", Name = "GetPelicula")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -156,7 +156,7 @@ namespace ApiPeliculas.Controllers
             var listaPelicula = _pelRepo.GetPeliculasEnCategoria(categoriaId);
 
 
-            if (listaPelicula  == null)
+            if (listaPelicula == null)
                 return NotFound();
 
             var itemPelicula = new List<PeliculaDto>();
@@ -174,7 +174,7 @@ namespace ApiPeliculas.Controllers
         [HttpGet("Buscar")]
         public IActionResult buscar(string nombre)
         {
-            try 
+            try
             {
                 var resultado = _pelRepo.BuscarPeliculas(nombre.Trim());
 

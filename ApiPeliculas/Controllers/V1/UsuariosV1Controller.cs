@@ -8,24 +8,24 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.V1
 {
     [Route("api/v{version:ApiVersion}/usuarios")]
     [ApiController]
     [ApiVersion("1.0")]
 
-    public class UsuariosController : ControllerBase
+    public class UsuariosV1Controller : ControllerBase
     {
         private readonly IUsuarioRepositorio _usRepo;
         protected RespuestAPI _respuestaApi;
         private readonly IMapper _mapper;
 
-        public UsuariosController(IUsuarioRepositorio usRepo, IMapper mapper)
+        public UsuariosV1Controller(IUsuarioRepositorio usRepo, IMapper mapper)
         {
             _usRepo = usRepo;
-            this._respuestaApi = new();
+            _respuestaApi = new();
             _mapper = mapper;
-            
+
         }
 
         [Authorize(Roles = "admin")]
@@ -77,7 +77,7 @@ namespace ApiPeliculas.Controllers
         public async Task<IActionResult> CrearUsuario([FromBody] UsuarioRegistroDto usuarioRegistroDto)
         {
             bool validarNombreUsuarioUnico = _usRepo.IsUniqueUser(usuarioRegistroDto.NombreUSuario);
-            
+
             if (!validarNombreUsuarioUnico)
             {
                 _respuestaApi.StatusCode = HttpStatusCode.BadRequest;
@@ -109,7 +109,7 @@ namespace ApiPeliculas.Controllers
 
         public async Task<IActionResult> Login([FromBody] UsuarioLoginDto usuarioLoginDto)
         {
-            var respuestaLogin = await  _usRepo.Login(usuarioLoginDto);
+            var respuestaLogin = await _usRepo.Login(usuarioLoginDto);
 
 
             if (respuestaLogin.Usuario == null || string.IsNullOrEmpty(respuestaLogin.Token))
@@ -128,7 +128,7 @@ namespace ApiPeliculas.Controllers
 
         // con el patch solo actualizo los campos en especifico a diferencia del put que es necesario enviar todos
         [Authorize(Roles = "admin")]
-        [HttpDelete("{usuarioId:int}", Name = "EliminarUsuario")]  
+        [HttpDelete("{usuarioId:int}", Name = "EliminarUsuario")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -137,8 +137,8 @@ namespace ApiPeliculas.Controllers
 
         public IActionResult Eliminarusuario(string usuarioId)
         {
-           // bool validarNombreUsuarioUnico = _usRepo.IsUniqueUser(usuarioRegistroDto.NombreUSuario);
-                bool validarExisteUsuario = _usRepo.ExisteUsuario(usuarioId);
+            // bool validarNombreUsuarioUnico = _usRepo.IsUniqueUser(usuarioRegistroDto.NombreUSuario);
+            bool validarExisteUsuario = _usRepo.ExisteUsuario(usuarioId);
             if (!validarExisteUsuario)
                 return NotFound(ModelState);
 

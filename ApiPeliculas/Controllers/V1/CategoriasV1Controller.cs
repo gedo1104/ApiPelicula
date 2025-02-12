@@ -6,28 +6,27 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.V1
 {
     [ApiController]
     //[Route("Api/[controller]")]  forma predeterminada
     [Route("Api/v{version:ApiVersion}/Categorias")]
     [ApiVersion("1.0")]
-    [ApiVersion("2.0")]
 
-    public class CategoriasController : ControllerBase
+    public class CategoriasV1Controller : ControllerBase
     {
         private readonly ICategoriaRepositorio _ctRepo;
 
         private readonly IMapper _mapper;
 
-        public CategoriasController(ICategoriaRepositorio ctRepo, IMapper mapper)
+        public CategoriasV1Controller(ICategoriaRepositorio ctRepo, IMapper mapper)
         {
             _ctRepo = ctRepo;
             _mapper = mapper;
         }
         [AllowAnonymous]
         [HttpGet]
-        [MapToApiVersion("1.0")]
+        //[MapToApiVersion("1.0")]
         //[ResponseCache(Duration =20)]
         // [ResponseCache(Location =ResponseCacheLocation.None, NoStore =true)] //no queremos cachear ni guardar los errores en cache
         //[HttpGet("Buscar")]
@@ -51,9 +50,9 @@ namespace ApiPeliculas.Controllers
 
 
         [AllowAnonymous]
-        [HttpGet("{categoriaId:Int}", Name= "GetCategoria")]
+        [HttpGet("{categoriaId:Int}", Name = "GetCategoria")]
         //[ResponseCache(Duration = 30)]
-        [ResponseCache(CacheProfileName= "Default20seconds")]
+        [ResponseCache(CacheProfileName = "Default20seconds")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -71,7 +70,7 @@ namespace ApiPeliculas.Controllers
             return Ok(itemCategoriaDto);
         }
 
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(CategoriaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -92,7 +91,7 @@ namespace ApiPeliculas.Controllers
                 ModelState.AddModelError("", "La categoria ya existe");
                 return StatusCode(404, ModelState);
             }
-                
+
 
             var categoria = _mapper.Map<Categoria>(crearCategoriaDto);
 
@@ -102,7 +101,7 @@ namespace ApiPeliculas.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return CreatedAtRoute("GetCategoria", new {categoriaId = categoria.Id }, categoria);
+            return CreatedAtRoute("GetCategoria", new { categoriaId = categoria.Id }, categoria);
         }
 
         [Authorize(Roles = "admin")]
@@ -112,7 +111,7 @@ namespace ApiPeliculas.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 
-        public IActionResult ActualizarCategoria(int categoriaId,[FromBody] CategoriaDto categoriaDto)
+        public IActionResult ActualizarCategoria(int categoriaId, [FromBody] CategoriaDto categoriaDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

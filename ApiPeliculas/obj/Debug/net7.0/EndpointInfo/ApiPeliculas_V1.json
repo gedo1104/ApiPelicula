@@ -1,0 +1,24 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Peliculas Api",
+    "description": "api de peliculas",
+    "version": "v1.0"
+  },
+  "paths": { },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Autentificacion JWT con el esquema bearer. \r\n\r\nIngresa la palabra 'Bearer' seguida de un [espacio] y despues su token en campo de abajo \r\n\r\n Ejemplo: \"Bearer sfsdfsdf\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Peliculas Api V2",
+    "description": "api de peliculas",
+    "termsOfService": "https://github.com/gedo1104",
+    "contact": {
+      "name": "Gedo",
+      "url": "https://github.com/gedo1104"
+    },
+    "license": {
+      "name": "License",
+      "url": "https://github.com/gedo1104"
+    },
+    "version": "v2.0"
+  },
+  "paths": {
+    "/Api/v2/Categorias": {
+      "get": {
+        "tags": [
+          "CategoriasV"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Autentificacion JWT con el esquema bearer. \r\n\r\nIngresa la palabra 'Bearer' seguida de un [espacio] y despues su token en campo de abajo \r\n\r\n Ejemplo: \"Bearer sfsdfsdf\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

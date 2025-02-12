@@ -120,6 +120,45 @@ builder.Services.AddSwaggerGen(options =>
             new List<string>()
         }
     });
+    options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Version = "v1.0",
+            Title = "Peliculas Api V1",
+            Description = "api de peliculas",
+            TermsOfService = new Uri("https://github.com/gedo1104"),
+            Contact = new OpenApiContact
+            {
+                Name = "Gedo",
+                Url = new Uri("https://github.com/gedo1104")
+            },
+            License = new OpenApiLicense
+            {
+                Name = "License",
+                Url = new Uri("https://github.com/gedo1104")
+            }
+        }
+
+    );
+    options.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Version = "v2.0",
+        Title = "Peliculas Api V2",
+        Description = "api de peliculas",
+        TermsOfService = new Uri("https://github.com/gedo1104"),
+        Contact = new OpenApiContact
+        {
+            Name = "Gedo",
+            Url = new Uri("https://github.com/gedo1104")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "License",
+            Url = new Uri("https://github.com/gedo1104")
+        }
+    }
+
+    );
+
 });
 
 //config cords
@@ -137,7 +176,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(opciones =>
+    {
+        opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiPeliculasV1");
+        opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "ApiPeliculasV2");
+
+    });
 }
 
 app.UseHttpsRedirection();
