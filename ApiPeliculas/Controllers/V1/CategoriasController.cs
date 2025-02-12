@@ -13,17 +13,25 @@ namespace ApiPeliculas.Controllers.V1
     [Route("Api/v{version:ApiVersion}/Categorias")]
     [ApiVersion("1.0")]
 
-    public class CategoriasV1Controller : ControllerBase
+    public class CategoriasController : ControllerBase
     {
         private readonly ICategoriaRepositorio _ctRepo;
 
         private readonly IMapper _mapper;
 
-        public CategoriasV1Controller(ICategoriaRepositorio ctRepo, IMapper mapper)
+        public CategoriasController(ICategoriaRepositorio ctRepo, IMapper mapper)
         {
             _ctRepo = ctRepo;
             _mapper = mapper;
         }
+
+        [HttpGet("GetString")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "valor 1", "valor 2", "valor 3" };
+        }
+
+
         [AllowAnonymous]
         [HttpGet]
         //[MapToApiVersion("1.0")]

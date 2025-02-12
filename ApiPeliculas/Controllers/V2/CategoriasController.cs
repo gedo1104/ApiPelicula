@@ -13,22 +13,22 @@ namespace ApiPeliculas.Controllers.V2
     [Route("Api/v{version:ApiVersion}/Categorias")]
     [ApiVersion("2.0")]
 
-    public class CategoriasV2Controller : ControllerBase
+    public class CategoriasController : ControllerBase
     {
         private readonly ICategoriaRepositorio _ctRepo;
 
         private readonly IMapper _mapper;
 
-        public CategoriasV2Controller(ICategoriaRepositorio ctRepo, IMapper mapper)
+        public CategoriasController(ICategoriaRepositorio ctRepo, IMapper mapper)
         {
             _ctRepo = ctRepo;
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet("GetString")]
         public IEnumerable<string> Get()
         {
-            return new string[] { "valor 1", "valor 2", "valor 3" };
+            return new string[] { "Gedo", "gedo 2", "gedo 3" };
         }
 
 

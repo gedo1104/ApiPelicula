@@ -15,10 +15,48 @@
     "version": "v1.0"
   },
   "paths": {
+    "/Api/v1/Categorias/GetString": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Api/v1/Categorias": {
       "get": {
         "tags": [
-          "CategoriasV"
+          "Categorias"
         ],
         "responses": {
           "403": {
@@ -48,7 +86,7 @@
       },
       "post": {
         "tags": [
-          "CategoriasV"
+          "Categorias"
         ],
         "requestBody": {
           "content": {
@@ -122,7 +160,7 @@
     "/Api/v1/Categorias/{categoriaId}": {
       "get": {
         "tags": [
-          "CategoriasV"
+          "Categorias"
         ],
         "operationId": "GetCategoria",
         "parameters": [
@@ -205,7 +243,7 @@
       },
       "patch": {
         "tags": [
-          "CategoriasV"
+          "Categorias"
         ],
         "operationId": "ActualizarCategoria",
         "parameters": [
@@ -307,7 +345,7 @@
       },
       "delete": {
         "tags": [
-          "CategoriasV"
+          "Categorias"
         ],
         "operationId": "EliminarCategoria",
         "parameters": [
@@ -412,7 +450,7 @@
     "/api/v1/peliculas": {
       "get": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "responses": {
           "403": {
@@ -442,7 +480,7 @@
       },
       "post": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "requestBody": {
           "content": {
@@ -536,7 +574,7 @@
     "/api/v1/peliculas/{peliculaId}": {
       "get": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "operationId": "GetPelicula",
         "parameters": [
@@ -619,7 +657,7 @@
       },
       "patch": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "operationId": "ActualizarPatchPelicula",
         "parameters": [
@@ -721,7 +759,7 @@
       },
       "delete": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "operationId": "EliminarPelicula",
         "parameters": [
@@ -826,7 +864,7 @@
     "/api/v1/peliculas/GetPeliculasCategoria/{categoriaId}": {
       "get": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "parameters": [
           {
@@ -850,7 +888,7 @@
     "/api/v1/peliculas/Buscar": {
       "get": {
         "tags": [
-          "PeliculasV"
+          "Peliculas"
         ],
         "parameters": [
           {
@@ -869,10 +907,21 @@
         }
       }
     },
-    "/api/v1/usuarios": {
+    "/api/v{version}/usuarios": {
       "get": {
         "tags": [
-          "UsuariosV"
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "403": {
@@ -921,15 +970,24 @@
         }
       }
     },
-    "/api/v1/usuarios/{usuarioId}": {
+    "/api/v{version}/usuarios/{usuarioId}": {
       "get": {
         "tags": [
-          "UsuariosV"
+          "Usuarios"
         ],
         "operationId": "GetUsuario",
         "parameters": [
           {
             "name": "usuarioId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
             "in": "path",
             "required": true,
             "style": "simple",
@@ -1026,7 +1084,7 @@
       },
       "delete": {
         "tags": [
-          "UsuariosV"
+          "Usuarios"
         ],
         "operationId": "EliminarUsuario",
         "parameters": [
@@ -1037,6 +1095,15 @@
             "style": "simple",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1127,10 +1194,21 @@
         }
       }
     },
-    "/api/v1/usuarios/registro": {
+    "/api/v{version}/usuarios/registro": {
       "post": {
         "tags": [
-          "UsuariosV"
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -1181,10 +1259,21 @@
         }
       }
     },
-    "/api/v1/usuarios/login": {
+    "/api/v{version}/usuarios/login": {
       "post": {
         "tags": [
-          "UsuariosV"
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {

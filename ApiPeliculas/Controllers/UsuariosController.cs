@@ -8,19 +8,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace ApiPeliculas.Controllers.V1
+namespace ApiPeliculas.Controllers
 {
     [Route("api/v{version:ApiVersion}/usuarios")]
     [ApiController]
-    [ApiVersion("1.0")]
+    //[ApiVersion("1.0")]
+    [ApiVersionNeutral]
 
-    public class UsuariosV1Controller : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioRepositorio _usRepo;
         protected RespuestAPI _respuestaApi;
         private readonly IMapper _mapper;
 
-        public UsuariosV1Controller(IUsuarioRepositorio usRepo, IMapper mapper)
+        public UsuariosController(IUsuarioRepositorio usRepo, IMapper mapper)
         {
             _usRepo = usRepo;
             _respuestaApi = new();

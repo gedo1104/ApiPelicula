@@ -14,13 +14,13 @@ namespace ApiPeliculas.Controllers.V1
     [Route("api/v{version:ApiVersion}/peliculas")]
     [ApiController]
     [ApiVersion("1.0")]
-    public class PeliculasV1Controller : ControllerBase
+    public class PeliculasController : ControllerBase
     {
         private readonly IPeliculaRepositorio _pelRepo;
 
         private readonly IMapper _mapper;
 
-        public PeliculasV1Controller(IPeliculaRepositorio pelRepo, IMapper mapper)
+        public PeliculasController(IPeliculaRepositorio pelRepo, IMapper mapper)
         {
             _pelRepo = pelRepo;
             _mapper = mapper;
