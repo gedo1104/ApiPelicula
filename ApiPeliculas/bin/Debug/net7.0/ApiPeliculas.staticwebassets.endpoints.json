@@ -167,6 +167,88 @@
       ]
     },
     {
+      "Route": "ImagenesPeliculas/1833ea49b-08cc-4dbb-b48f-7cf4c35b9a29.PNG",
+      "AssetFile": "ImagenesPeliculas/1833ea49b-08cc-4dbb-b48f-7cf4c35b9a29.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17634"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J6M+loEBKZz9bpYFnS7C11GdzvzUdMoaFY9PSDpGZQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 20:52:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-J6M+loEBKZz9bpYFnS7C11GdzvzUdMoaFY9PSDpGZQQ="
+        }
+      ]
+    },
+    {
+      "Route": "ImagenesPeliculas/1833ea49b-08cc-4dbb-b48f-7cf4c35b9a29.xm2yb4q87h.PNG",
+      "AssetFile": "ImagenesPeliculas/1833ea49b-08cc-4dbb-b48f-7cf4c35b9a29.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17634"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J6M+loEBKZz9bpYFnS7C11GdzvzUdMoaFY9PSDpGZQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 20:52:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xm2yb4q87h"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-J6M+loEBKZz9bpYFnS7C11GdzvzUdMoaFY9PSDpGZQQ="
+        },
+        {
+          "Name": "label",
+          "Value": "ImagenesPeliculas/1833ea49b-08cc-4dbb-b48f-7cf4c35b9a29.PNG"
+        }
+      ]
+    },
+    {
       "Route": "ImagenesPeliculas/1afa98be7-3f03-445a-925a-e1cbaa0daffc.PNG",
       "AssetFile": "ImagenesPeliculas/1afa98be7-3f03-445a-925a-e1cbaa0daffc.PNG",
       "Selectors": [],

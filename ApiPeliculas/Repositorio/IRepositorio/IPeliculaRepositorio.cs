@@ -4,7 +4,13 @@ namespace ApiPeliculas.Repositorio.IRepositorio
 {
     public interface IPeliculaRepositorio
     {
-        ICollection<Pelicula> GetPeliculas();
+        //v1
+        //ICollection<Pelicula> GetPeliculas();
+
+        //v2
+        ICollection<Pelicula> GetPeliculas(int pageNumber, int pageSize);
+
+        int GettotalPeliculas();
         Pelicula GetPelicula(int peliculaId);
         bool ExistePelicula(string nombre);
         bool ExistePelicula(int id);

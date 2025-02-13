@@ -23,8 +23,8 @@ namespace ApiPeliculas.Modelos
 
         public DateTime? FechaCreacion { get; set; }
 
-        [ForeignKey ("CategoriaId")]
         public int CategoriaId { get; set; }
+        [ForeignKey("CategoriaId")]
         public Categoria Categoria { get; set; }
 
 
