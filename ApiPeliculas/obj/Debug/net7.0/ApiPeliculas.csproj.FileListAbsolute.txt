@@ -181,3 +181,4 @@ D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Abstrac
 D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Http.dll
 D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
 D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll
+D:\repositorios\ApiPelicula\ApiPeliculas\bin\Debug\net7.0\ApiPeliculas.staticwebassets.runtime.json

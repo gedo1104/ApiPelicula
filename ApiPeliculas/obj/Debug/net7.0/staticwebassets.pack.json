@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\wwwroot\\ImagenesPeliculas\\0d3e3702d-5986-4b4a-997b-7f9edbe04e62.png",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\0d3e3702d-5986-4b4a-997b-7f9edbe04e62.png"
+    },
+    {
+      "Id": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\wwwroot\\ImagenesPeliculas\\10d894c78-e85b-41b2-966d-1cfde9940a12.PNG",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\10d894c78-e85b-41b2-966d-1cfde9940a12.PNG"
+    },
+    {
+      "Id": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\wwwroot\\ImagenesPeliculas\\1afa98be7-3f03-445a-925a-e1cbaa0daffc.PNG",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\1afa98be7-3f03-445a-925a-e1cbaa0daffc.PNG"
+    },
+    {
+      "Id": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\wwwroot\\ImagenesPeliculas\\1f8472aed-0b89-4b44-b026-6d0cbc7977ba.PNG",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\1f8472aed-0b89-4b44-b026-6d0cbc7977ba.PNG"
+    },
+    {
+      "Id": "D:\\repositorios\\ApiPelicula\\ApiPeliculas\\wwwroot\\ImagenesPeliculas\\8d556761d-6b97-46c8-b035-ff8ae1d56422.PNG",
+      "PackagePath": "staticwebassets\\ImagenesPeliculas\\8d556761d-6b97-46c8-b035-ff8ae1d56422.PNG"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApiPeliculas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApiPeliculas.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ApiPeliculas.props",
+      "PackagePath": "build\\ApiPeliculas.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ApiPeliculas.props",
+      "PackagePath": "buildMultiTargeting\\ApiPeliculas.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ApiPeliculas.props",
+      "PackagePath": "buildTransitive\\ApiPeliculas.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

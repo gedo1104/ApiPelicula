@@ -59,7 +59,7 @@ namespace ApiPeliculas.Repositorio
 
         public  async Task<UsuarioDatosDto> Registro(UsuarioRegistroDto usuarioRegistroDto)
         {
-
+            //recordar que la clave debe de ser mayuscula, numeros, letras, simbolo, min 6 caracteres ejem: Admin123*
 
             AppUsuario usuario = new AppUsuario()
             {
